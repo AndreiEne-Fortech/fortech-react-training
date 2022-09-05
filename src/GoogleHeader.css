@@ -1,0 +1,6 @@
+.GoogleHeader {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    padding: 1em;
+}
