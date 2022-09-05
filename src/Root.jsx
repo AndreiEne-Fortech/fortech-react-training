@@ -1,21 +1,34 @@
 import Header from './Header'
 import Content from './Content'
-import { impureFunction, pureFunction } from './pureFunction'
+import IncrementButton from './IncrementButton'
+import CurrentCount from './CurrentCount'
+import { useState } from 'react'
+import SearchResult from './SearchResult'
 
 export default function Root() {
-    impureFunction()
-    impureFunction()
-    impureFunction()
+    const [num, setNum] = useState(0)
+    const [value, setValue] = useState("")
+    const [searchResultValue, setSearchResultValue] = useState("")
 
-    // pureFunction(2, 2)
-    // pureFunction(2, 2)
-    // pureFunction(2, 2)
-    // pureFunction(2, 2)
+    function handleValue(event) {
+        setValue(event.target.value)
+    }
+
+    function increment() {
+        setNum((oldNum) => oldNum + 1)
+    }
+
+    function handleShowValue() {
+        setSearchResultValue(value)
+    }
 
     return (
         <>
             <Header />
-            <Content />
+            <Content onValueChanged={handleValue} onShowValue={handleShowValue} />
+            <CurrentCount count={num} />
+            <IncrementButton onClick={increment} />
+            <SearchResult value={searchResultValue} />
         </>
     )
 

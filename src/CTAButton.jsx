@@ -1,7 +1,7 @@
 
-const CTAButton = ({ children }) => {
+const CTAButton = ({ children, onClick }) => {
     return (
-        <button>{children}</button>
+        <button onClick={onClick}>{children}</button>
     )
 }
 
