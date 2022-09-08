@@ -1,7 +1,12 @@
 import IconButton from "./IconButton"
 import { BsFillMicFill } from "react-icons/bs"
+import React from 'react'
 
-export default function SearchBar({ onValueChanged }) {
+interface ISearchBarProps {
+    onValueChanged: React.ChangeEventHandler<HTMLInputElement>
+}
+
+export default function SearchBar({ onValueChanged }: ISearchBarProps) {
 
     return (
         <>

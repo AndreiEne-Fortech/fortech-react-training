@@ -6,7 +6,7 @@ export function impureFunction(){
     return result
 }
 
-export function pureFunction(a,b){
+export function pureFunction(a: number, b:number){
     const sum = a+b
     console.log(sum)
     return sum

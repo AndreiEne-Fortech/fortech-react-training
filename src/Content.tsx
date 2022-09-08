@@ -3,8 +3,14 @@ import SearchBar from "./SearchBar"
 import CTAButton from "./CTAButton"
 import Link from "./Link"
 import './Content.css'
+import React from "react"
 
-export default function Content({ onValueChanged, onShowValue }) {
+interface IContentProps{
+    onValueChanged:React.ChangeEventHandler<HTMLInputElement>,
+    onShowValue: React.MouseEventHandler<HTMLButtonElement>,
+}
+
+export default function Content({ onValueChanged, onShowValue }: IContentProps) {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "20px" }}>

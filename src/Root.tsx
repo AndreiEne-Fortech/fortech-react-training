@@ -4,13 +4,14 @@ import IncrementButton from './IncrementButton'
 import CurrentCount from './CurrentCount'
 import { useState } from 'react'
 import SearchResult from './SearchResult'
+import React from 'react'
 
 export default function Root() {
     const [num, setNum] = useState(0)
     const [value, setValue] = useState("")
     const [searchResultValue, setSearchResultValue] = useState("")
 
-    function handleValue(event) {
+    function handleValue(event: React.ChangeEvent<HTMLInputElement>) {
         setValue(event.target.value)
     }
 
