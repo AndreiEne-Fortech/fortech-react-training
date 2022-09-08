@@ -5,6 +5,10 @@ import CurrentCount from './CurrentCount'
 import { useState } from 'react'
 import SearchResult from './SearchResult'
 import React from 'react'
+import Clock from './Clock'
+import Sizer from './Sizer'
+import NumberList from './NumberList'
+import { MyContext } from './MyContext'
 
 export default function Root() {
     const [num, setNum] = useState(0)
@@ -24,13 +28,17 @@ export default function Root() {
     }
 
     return (
-        <>
+        <MyContext.Provider value={handleValue}>
             <Header />
-            <Content onValueChanged={handleValue} onShowValue={handleShowValue} />
+            <Content onShowValue={handleShowValue} />
             <CurrentCount count={num} />
             <IncrementButton onClick={increment} />
             <SearchResult value={searchResultValue} />
-        </>
+
+            <Clock />
+            <Sizer />
+            <NumberList />
+        </MyContext.Provider>
     )
 
 }

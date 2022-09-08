@@ -1,13 +1,10 @@
 import IconButton from "./IconButton"
 import { BsFillMicFill } from "react-icons/bs"
-import React from 'react'
+import React, { useContext } from 'react'
+import { MyContext } from "./MyContext"
 
-interface ISearchBarProps {
-    onValueChanged: React.ChangeEventHandler<HTMLInputElement>
-}
-
-export default function SearchBar({ onValueChanged }: ISearchBarProps) {
-
+export default function SearchBar() {
+    const onValueChanged = useContext(MyContext)
     return (
         <>
             <form className="search-bar">

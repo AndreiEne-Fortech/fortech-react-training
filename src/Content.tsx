@@ -6,16 +6,15 @@ import './Content.css'
 import React from "react"
 
 interface IContentProps{
-    onValueChanged:React.ChangeEventHandler<HTMLInputElement>,
     onShowValue: React.MouseEventHandler<HTMLButtonElement>,
 }
 
-export default function Content({ onValueChanged, onShowValue }: IContentProps) {
+export default function Content({ onShowValue }: IContentProps) {
 
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "20px" }}>
             <Logo />
-            <SearchBar onValueChanged={onValueChanged} />
+            <SearchBar />
             <div className="search-buttons">
                 <CTAButton onClick={onShowValue}>Search Google</CTAButton>
                 <CTAButton>I'm feeling lucky!</CTAButton>
